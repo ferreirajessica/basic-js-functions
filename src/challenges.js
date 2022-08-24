@@ -17,8 +17,13 @@ function splitSentence(phrase) {
 }
 
 // Desafio 4
-function concatName() {
+function concatName(arr) {
   // seu código aqui
+  let firstAndLast = [];
+  firstAndLast.push(arr[arr.length - 1]);
+  firstAndLast.push(arr[0]);
+  let store = `${firstAndLast[0]}, ${firstAndLast[1]}`;
+  return store;
 }
 
 // Desafio 5
