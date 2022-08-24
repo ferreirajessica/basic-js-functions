@@ -28,9 +28,22 @@ function footballPoints(wins, ties) {
 }
 
 // Desafio 6
-function highestCount() {
-  // seu código aqui
+function highestCount(arr) {
+  let store = arr[0];
+  let repeat = [];
+  for (let number = 0; number < arr.length; number += 1) {
+    if (arr[number] > store) {
+      store = arr[number];
+    }
+  }
+  for (let value of arr) {
+    if (value === store) {
+      repeat.push(value);
+    }
+  }
+  return repeat.length;
 }
+// ver se consigo fazer da segunda parte uma função e retornar essa função
 
 // Desafio 7
 function catAndMouse() {
