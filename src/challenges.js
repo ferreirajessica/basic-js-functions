@@ -1,3 +1,5 @@
+/* eslint-disable default-case */
+/* eslint-disable complexity */
 // Desafio 1
 function compareTrue(p1, p2) {
   return p1 && p2;
@@ -62,7 +64,6 @@ function catAndMouse(mouse, cat1, cat2) {
 }
 
 // Desafio 8
-// eslint-disable-next-line complexity
 function fizzBuzz(arr) {
   let result = [];
   for (let value = 0; value < arr.length; value += 1) {
@@ -78,12 +79,101 @@ function fizzBuzz(arr) {
   } return result;
 }
 
-// Desafio 9
-function encode() {
-  // seu código aqui
+function encrypt(letter) {
+  switch (letter) {
+  case 'a': letter = 1;
+    break;
+  case 'e': letter = 2;
+    break;
+  case 'i': letter = 3;
+    break;
+  case 'o': letter = 4;
+    break;
+  case 'u': letter = 5;
+    break;
+  }
+  return letter;
 }
-function decode() {
-  // seu código aqui
+
+function vowel(letter) {
+  switch (letter) {
+  case 'a': letter = true;
+    break;
+  case 'e': letter = true;
+    break;
+  case 'i': letter = true;
+    break;
+  case 'o': letter = true;
+    break;
+  case 'u': letter = true;
+    break;
+  default: letter = false;
+  }
+  return letter;
+}
+
+// Desafio 9
+function encode(str) {
+  let myString = str;
+  let encoded = '';
+  for (let letter = 0; letter < myString.length; letter += 1) {
+    let check = vowel(myString[letter]);
+    if (check === true) {
+      let encryption = encrypt(myString[letter]);
+      encoded += encryption;
+    } else {
+      encoded += myString[letter];
+    }
+  }
+  return encoded;
+}
+
+function decrypt(number) {
+  switch (number) {
+  case '1': number = 'a';
+    break;
+  case '2': number = 'e';
+    break;
+  case '3': number = 'i';
+    break;
+  case '4': number = 'o';
+    break;
+  case '5': number = 'u';
+    break;
+  }
+  return number;
+}
+
+function isNumber(num) {
+  switch (num) {
+  case '1': num = true;
+    break;
+  case '2': num = true;
+    break;
+  case '3': num = true;
+    break;
+  case '4': num = true;
+    break;
+  case '5': num = true;
+    break;
+  default: num = false;
+  }
+  return num;
+}
+
+function decode(str) {
+  let myString = str;
+  let decoded = '';
+  for (let letter = 0; letter < myString.length; letter += 1) {
+    let check = isNumber(myString[letter]);
+    if (check === true) {
+      let decryption = decrypt(myString[letter]);
+      decoded += decryption;
+    } else {
+      decoded += myString[letter];
+    }
+  }
+  return decoded;
 }
 
 // Desafio 10
