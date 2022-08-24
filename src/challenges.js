@@ -46,8 +46,19 @@ function highestCount(arr) {
 // ver se consigo fazer da segunda parte uma função e retornar essa função
 
 // Desafio 7
-function catAndMouse() {
-  // seu código aqui
+function catAndMouse(mouse, cat1, cat2) {
+  let distanceCat1 = Math.abs(cat1 - mouse);
+  let distanceCat2 = Math.abs(cat2 - mouse);
+
+  if (distanceCat1 < distanceCat2) {
+    return 'cat1';
+  }
+  if (distanceCat2 < distanceCat1) {
+    return 'cat2';
+  }
+  if (distanceCat1 === distanceCat2) {
+    return 'os gatos trombam e o rato foge';
+  }
 }
 
 // Desafio 8
