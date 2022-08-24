@@ -175,10 +175,27 @@ function decode(str) {
   }
   return decoded;
 }
-
+/*
+function validate (data) {
+  if (data.length === 0) {
+    return false;
+  } return true;
+} */
 // Desafio 10
-function techList() {
-  // seu código aqui
+function techList(arr, str) {
+  let myArray = arr.sort();
+  let newArray = [];
+  if (arr.length === 0 || str.length === 0) {
+    return 'Vazio!';
+  }
+  for (let item of myArray) {
+    let listItem = {
+      tech: item,
+      name: str,
+    };
+    newArray.push(listItem);
+  }
+  return newArray;
 }
 
 module.exports = {
